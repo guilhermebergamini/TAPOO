@@ -38,7 +38,7 @@ class Produto {
     }
 
     // tipo: 1 = entrada, 2 = saída
-    public function Estoque ($tipo_entrada, $qntd_desejada){
+   /* public function Estoque ($tipo_entrada, $qntd_desejada){
         if ($tipo_entrada == 1)
         {
             $this->qntd += $qntd_desejada;
@@ -53,6 +53,16 @@ class Produto {
         }
 
         $this->CalcularTotal();
+    }
+*/
+    public function AdicionarProdutos($qntd_desejada)
+    {
+        $this->qntd += $qntd_desejada;
+    }
+
+    public function RemoverProdutos($qntd_desejada)
+    {
+        $this->qntd -= $qntd_desejada;
     }
     
 }
@@ -73,12 +83,12 @@ echo "<h3>Dados iniciais do produto</h3>";
 $p1->MostrarAtributos();
 
 // adicionar estoque
-$p1->Estoque(1, 5); // entrada de 5 unidades
+$p1->AdicionarProdutos(5); // entrada de 5 unidades
 echo "<h3>Após entrada no estoque</h3>";
 $p1->MostrarAtributos();
 
 //tirar estoque
-$p1->Estoque(2, 3); // saída de 3 unidades
+$p1->RemoverProdutos(2); // saída de 2 unidades
 echo "<h3>Após saída no estoque</h3>";
 $p1->MostrarAtributos();
 ?>

@@ -34,7 +34,6 @@ class Conta
 }
 
 class Funcionario{
-
     //Declaracao de Atributos
     public $codigo;
     public $nome;
